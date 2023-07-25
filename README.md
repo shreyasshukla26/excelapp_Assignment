@@ -20,4 +20,5 @@ Start the Django development server:
 Access the application at http://127.0.0.1:8000/
 
 ## screenshot
-![](https://drive.google.com/file/d/1NkthaPlmq4wPwui6my6TFtcfT-gz8qIm/view?usp=drive_link)
+![Image Description](https://drive.google.com/uc?export=view&id=1NkthaPlmq4wPwui6my6TFtcfT-gz8qIm)
+
