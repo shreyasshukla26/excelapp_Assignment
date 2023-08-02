@@ -5,22 +5,16 @@ from .models import Order
 import os
 import openpyxl
 
-
 def upload_file(request):
     if request.method == 'POST' and request.FILES['file']:
         uploaded_file = request.FILES['file']
-        fs = FileSystemStorage()
-        file_path = r'C:\Users\shukl\Downloads\Book1.xlsx'
-
-
-        
-        insert_data_from_excel(file_path)
+        insert_data_from_excel(uploaded_file)
 
     orders = Order.objects.all()
     return render(request, 'index.html', {'orders': orders})
 
-def insert_data_from_excel(file_path):
-    wb = load_workbook(file_path)
+def insert_data_from_excel(uploaded_file):
+    wb = load_workbook(uploaded_file)
     sheet = wb.active
 
     for row in sheet.iter_rows(min_row=2, values_only=True):
