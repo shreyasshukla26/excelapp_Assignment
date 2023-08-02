@@ -19,14 +19,14 @@ def insert_data_from_excel(uploaded_file):
 
     for row in sheet.iter_rows(min_row=2, values_only=True):
         order_id, product_name, product_price, shipped = row
-        shipped = shipped.strip().lower() == 'yes'
 
+        
         Order.objects.create(
             order_id=order_id,
             product_name=product_name,
             product_price=product_price,
             shipped=shipped
-        )
+        )      
 
 def download_file(request):
     
